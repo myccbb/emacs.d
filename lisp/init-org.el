@@ -1,9 +1,9 @@
 ;; Install htmlize for syntax highlighting of org-mode export.
-(use-package htmlize
-  :ensure t
-  )
+(use-package htmlize)
 
 (use-package org
+  :ensure nil
+  :defer t
   :mode (("\\.org\\'" . org-mode)
          ("\\.org.txt\\'" . org-mode))
   :config

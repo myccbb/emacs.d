@@ -1,7 +1,7 @@
-(use-package coffee-mode)
-
-;; set tab width to 2
-(custom-set-variables '(coffee-tab-width 2))
+(use-package coffee-mode
+  :config
+  ;; set tab width to 2
+  (custom-set-variables '(coffee-tab-width 2)))
 
 ;; Insert appropriate number of coffee-tab-with according to
 ;; coffee-previous-indent and coffee-line-wants-indent.

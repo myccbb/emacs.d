@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package go-mode
-  :ensure t
   :mode "\\.go\\'"
   :config
   (add-hook 'go-mode-hook #'lsp-deferred)

@@ -4,7 +4,6 @@
 
 
 (use-package evil
-  :ensure t
   :init
   ;; change ctrl-z to avoid enter evil-emacs-state
   (setq evil-toggle-key "C-x e v i l")
@@ -46,13 +45,11 @@
   )
 
 (use-package evil-surround
-  :ensure t
   :config
   (global-evil-surround-mode t)
   )
 
 (use-package evil-leader
-  :ensure t
   :config
   (global-evil-leader-mode)
 

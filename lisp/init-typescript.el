@@ -1,5 +1,4 @@
 (use-package typescript-mode
-  :ensure t
   :mode "\\.ts\\'"
   :config
   (add-hook 'typescript-mode-hook #'lsp-deferred)

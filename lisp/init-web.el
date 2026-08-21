@@ -1,7 +1,6 @@
 ;;; web-mode
 
 (use-package web-mode
-  :ensure t
   ;:mode ("\\.html\\'" "\\.css\\'")
   :mode "\\.html\\'"
   :config

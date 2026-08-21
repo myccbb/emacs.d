@@ -10,12 +10,9 @@
             (lambda () (modify-syntax-entry ?_ "w" python-mode-syntax-table)))
   )
 
-(use-package yapfify
-  :ensure t
-  )
+(use-package yapfify)
 
 (use-package flycheck-mypy
-  :ensure t
   :config
   (add-to-list 'flycheck-disabled-checkers 'python-flake8)
   (add-to-list 'flycheck-disabled-checkers 'python-pylint)

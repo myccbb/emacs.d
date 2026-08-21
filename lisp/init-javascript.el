@@ -1,10 +1,8 @@
 (use-package json-mode
-  :ensure t
   :mode "\\.json\\'"
   )
 
 (use-package rjsx-mode
-  :ensure t
   :mode "\\.js\\'"
   :config
   (setq js-indent-level 2)
