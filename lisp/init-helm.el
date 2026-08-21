@@ -2,12 +2,12 @@
 ;;; http://tuhdo.github.io/helm-intro.html
 
 
-(require-package 'helm)
-(require-package 'helm-ag)
-(require-package 'helm-ls-git)
-(require-package 'helm-gtags)
-(require-package 'helm-mt)
-(require-package 'helm-swoop)
+(use-package helm)
+(use-package helm-ag)
+(use-package helm-ls-git)
+(use-package helm-gtags)
+(use-package helm-mt)
+(use-package helm-swoop)
 
 
 (require 'helm)

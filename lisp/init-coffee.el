@@ -1,4 +1,4 @@
-(require-package 'coffee-mode)
+(use-package coffee-mode)
 
 ;; set tab width to 2
 (custom-set-variables '(coffee-tab-width 2))

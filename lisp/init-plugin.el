@@ -3,7 +3,7 @@
 ;;; Code:
 
 ;;; Theme
-;(require-package 'color-theme-sanityinc-tomorrow)
+;(use-package color-theme-sanityinc-tomorrow)
 ;(require 'color-theme-sanityinc-tomorrow)
 ;(load-theme 'sanityinc-tomorrow-night t)
 (use-package color-theme-sanityinc-tomorrow
@@ -124,10 +124,10 @@
   )
 
 ;;; lemon-mode
-(require-package 'lemon-mode)
+(use-package lemon-mode)
 
 ;;; yasnippet
-(require-package 'yasnippet)
+(use-package yasnippet)
 (require 'yasnippet)
 (setq yas-snippet-dirs
       (list (expand-file-name "snippets/snippets" user-emacs-directory)))
@@ -135,13 +135,13 @@
 
 
 ;;; expand-region
-(require-package 'expand-region)
+(use-package expand-region)
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 
 ;;; clang-format
-(require-package 'clang-format)
+(use-package clang-format)
 (require 'clang-format)
 (setq-default clang-format-style "{IndentWidth: 4}")
 
@@ -156,20 +156,20 @@
 
 
 ;;; fic-mode
-(require-package 'fic-mode)
+(use-package fic-mode)
 
 
 ;;; dockerfile-mode
-(require-package 'dockerfile-mode)
+(use-package dockerfile-mode)
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 ;;; counsel swiper and ivy
-(require-package 'swiper)
-(require-package 'counsel)
+(use-package swiper)
+(use-package counsel)
 ;; (ivy-mode t)
 
 
-(require-package 'exec-path-from-shell)
+(use-package exec-path-from-shell)
 ;;; exec-path-from-shell
 (if (not (string-equal system-type "windows-nt"))
     (progn
@@ -180,11 +180,11 @@
 
 
 ;;; nginx-mode
-(require-package 'nginx-mode)
+(use-package nginx-mode)
 
 
 ;;; plantuml-mode
-;; (require-package 'plantuml-mode)
+;; (use-package plantuml-mode)
 (require 'plantuml-mode)
 (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
 

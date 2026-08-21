@@ -1,6 +1,7 @@
 *~
 *#
 *.swp
+/eln-cache
 /org/*.el
 /org/*.html
 /recentf
@@ -23,3 +24,4 @@ ede-projects.el
 places
 semanticdb
 tutorial
+/projectile-frecency.eld

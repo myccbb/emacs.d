@@ -1,7 +1,7 @@
-(require-package 'flx-ido)
-(require-package 'ido-completing-read+)
-(require-package 'idomenu)
-(require-package 'smex)
+(use-package flx-ido)
+(use-package ido-completing-read+)
+(use-package idomenu)
+(use-package smex)
 
 (require 'smex)
 (smex-initialize)

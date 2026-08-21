@@ -9,28 +9,14 @@
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(setq package-archives '(("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(setq package-archives
+      '(("gnu"    . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa"  . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")))
 (package-initialize)
 
-;; require-package function
-;; If package already installed, then skip
-;; If package name in package-archive-contents or no-refresh is t,
-;; then install the package
-;; else refresh package contents and call require-package again
-;; with no-refresh
-(defun require-package (package &optional min-version no-refresh)
-  "Install PACKAGE with MIN-VERSION.
-if package name was found in package-archive-contents
-or NO-REFRESH is true, local package info will not be refreshed"
-  (if (package-installed-p package min-version)
-      t
-    (if (or (assoc package package-archive-contents) no-refresh)
-        (package-install package)
-      (progn
-        (package-refresh-contents)
-        (require-package package min-version t)))))
+(unless package-archive-contents
+  (package-refresh-contents))
 
 
 ;; (require 'org)
@@ -51,8 +37,9 @@ or NO-REFRESH is true, local package info will not be refreshed"
 ;; (my:org-babel-load-file "org/init-org.org")
 
 ;;; use-package
-(require-package 'use-package)
 (require 'use-package)
+(setq use-package-always-ensure t)
+
 
 (require 'init-util)
 (require 'init-common)
@@ -79,4 +66,3 @@ or NO-REFRESH is true, local package info will not be refreshed"
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
-

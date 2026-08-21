@@ -1,7 +1,7 @@
-(require-package 'magit)
+(use-package magit)
 
 
-(require-package 'git-gutter)
+(use-package git-gutter)
 (global-git-gutter-mode t)
 
 (provide 'init-vc)

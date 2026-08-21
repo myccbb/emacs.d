@@ -12,8 +12,8 @@
   (add-hook 'rjsx-mode-hook
             (lambda () (modify-syntax-entry ?_ "w" js2-mode-syntax-table)))
   )
-;(require-package 'json-mode)
-;(require-package 'js2-mode)
+;(use-package json-mode)
+;(use-package js2-mode)
 ;
 ;(require 'js2-mode)
 ;
