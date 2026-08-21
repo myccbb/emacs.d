@@ -14,7 +14,6 @@
 
 ;;; persp-mode
 (use-package persp-mode
-  :ensure t
   :init
   (persp-mode 1)
   :custom
@@ -174,10 +173,6 @@
 ;;; racket-mode
 ; too slow
 ;(use-package racket-mode)
-
-(use-package scheme-mode
-  :mode "\\.rkt\\'"
-  )
 
 (provide 'init-plugin)
 ;;; init-plugin.el ends here

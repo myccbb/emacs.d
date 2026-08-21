@@ -9,13 +9,11 @@
   )
 
 (use-package orderless
-  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package consult
-  :ensure t
   :bind (
          ("C-x b" . consult-buffer)
          ("C-x 4 b" . consult-buffer-other-window)
@@ -27,7 +25,6 @@
   )
 
 (use-package marginalia
-  :ensure t
   :bind (("M-A" . marginalia-cycle)
          :map minibuffer-local-map
          ("M-A" . marginalia-cycle))
@@ -36,14 +33,12 @@
   (marginalia-mode 1))
 
 (use-package nerd-icons-completion
-  :ensure t
   :after marginalia
   :config
   (nerd-icons-completion-mode)
   (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
 
 (use-package orderless
-  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion))))
@@ -52,7 +47,6 @@
   )
 
 (use-package corfu
-  :ensure t
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0.1)
@@ -72,13 +66,11 @@
   )
 
 (use-package corfu-terminal
-  :ensure t
   :unless (display-graphic-p)
   :config
   (corfu-terminal-mode +1))
 
 (use-package kind-icon
-  :ensure t
   :after corfu
   :custom
   (kind-icon-default-face 'corfu-default)
@@ -86,7 +78,6 @@
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (use-package cape
-  :ensure t
   :init
   (add-to-list 'completion-at-point-functions #'cape-file)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev))
@@ -109,8 +100,6 @@
   )
 
 (use-package treesit-auto
-  :straight t
-  :ensure t
   :custom
   (treesit-auto-install 'prompt)
   :config
