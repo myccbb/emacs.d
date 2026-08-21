@@ -91,4 +91,29 @@
   (add-to-list 'completion-at-point-functions #'cape-file)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev))
 
+(use-package eglot
+  :ensure nil
+  :hook
+  ((python-ts-mode
+    rust-ts-mode
+    c-ts-mode
+    c++-ts-mode
+    go-ts-mode
+    js-ts-mode
+    typescript-ts-mode) . eglot-ensure)
+  :config
+  ;;(setq eglot-ignored-server-capabilities '(:hoverProvider))
+  ;;(add-hook 'before-save-hook #'eglot-format-buffer) ; format on save
+  (setq read-process-output-max (* 3 1024 1024)) ; improve performance
+  (setq eglot-sync-connect 1) ; change delay to 1 second (default is 0.5)
+  )
+
+(use-package treesit-auto
+  :straight t
+  :ensure t
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (global-treesit-auto-mode))
+
 (provide 'init-completion)

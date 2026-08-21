@@ -28,24 +28,6 @@
   )
 
 
-;;; company-mode - Modular in-buffer completion framework
-(use-package company
-  :init
-  (add-hook 'after-init-hook 'global-company-mode)
-  :config
-  ;; (setq company-dabbrev-downcase nil)
-  ;;; remove annoying blinking
-  ;;(setq company-echo-delay 0)
-  )
-
-
-;;; complete c/c++ headers
-(use-package company-c-headers
-  :config
-  (add-to-list 'company-backends 'company-c-headers)
-  )
-
-
 ;;; Highlight Indentation
 (use-package highlight-indentation
   :init
@@ -56,9 +38,9 @@
   (add-hook 'python-mode-hook 'highlight-indentation-mode)
   )
 
+
 ;;; Uniquify - Making buffer names unique
 (setq uniquify-buffer-name-style 'post-forward)
-
 
 
 ;;; Flycheck - Modern on the fly syntax checking
