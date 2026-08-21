@@ -6,12 +6,12 @@ export GOPROXY=https://goproxy.io
 
 # Do not use the -u flag, as it will update your dependencies to incompatible versions.
 # https://github.com/golang/tools/tree/master/gopls
-go get -v golang.org/x/tools/gopls@latest
-go get -u -v golang.org/x/tools/cmd/goimports
-go get -u -v golang.org/x/lint/golint
+go install golang.org/x/tools/gopls@latest
+go install golang.org/x/tools/cmd/goimports@latest
+go install golang.org/x/lint/golint@latest
 
-go get -u -v github.com/golang/mock/gomock
-go get -u -v github.com/golang/mock/mockgen
+go install github.com/golang/mock/gomock@latest
+go install github.com/golang/mock/mockgen@latest
 #+END_SRC
 
 
@@ -19,13 +19,13 @@ go get -u -v github.com/golang/mock/mockgen
 
 #+BEGIN_SRC sh
 rustup update
-rustup component add rls rust-analysis rust-src
+rustup component add rust-analyzer rust-src
 #+END_SRC
 
 
 * python
 #+BEGIN_SRC sh
-pip install --user pylint yapf python-language-server mypy pyls-mypy
+pip install --user pylint ruff python-language-server mypy pyls-mypy
 #+END_SRC
 
 * typescript

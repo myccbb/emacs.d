@@ -122,8 +122,8 @@
 (use-package yaml-mode
   :mode "\\.yml\\'"
   :config
-  (lambda () (modify-syntax-entry ?_ "w" yaml-mode-syntax-table))
-  )
+  (add-hook 'yaml-mode-hook
+            (lambda () (modify-syntax-entry ?_ "w"))))
 
 
 ;;; fic-mode
@@ -134,11 +134,6 @@
 (use-package dockerfile-mode
   :config
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
-
-;;; counsel swiper and ivy
-(use-package swiper)
-(use-package counsel)
-;; (ivy-mode t)
 
 
 (use-package exec-path-from-shell
@@ -173,6 +168,13 @@
 ;;; racket-mode
 ; too slow
 ;(use-package racket-mode)
+
+
+(use-package apheleia
+  :config
+  (apheleia-global-mode +1)
+  (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff)))
+
 
 (provide 'init-plugin)
 ;;; init-plugin.el ends here

@@ -9,7 +9,6 @@
             (lambda () (modify-syntax-entry ?_ "w")))
   )
 
-(use-package yapfify)
 
 (use-package flycheck-mypy
   :config
