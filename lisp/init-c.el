@@ -12,10 +12,8 @@
 ;; make '_' as a word character
 (add-hook 'c-mode-common-hook
           (lambda () (progn
-                       (modify-syntax-entry ?_ "w" c-mode-syntax-table)
-                       (modify-syntax-entry ?_ "w" c++-mode-syntax-table))))
-
-(add-hook 'c-mode-common-hook #'lsp-deferred)
+                       (modify-syntax-entry ?_ "w")
+                       (modify-syntax-entry ?_ "w"))))
 
 (provide 'init-c)
 ;;; init-c.el ends here

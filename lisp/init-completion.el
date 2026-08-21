@@ -38,14 +38,6 @@
   (nerd-icons-completion-mode)
   (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
 
-(use-package orderless
-  :custom
-  (completion-styles '(orderless basic))
-  (completion-category-overrides '((file (styles basic partial-completion))))
-  (completion-category-defaults nil)
-  (completion-pcm-leading-wildcard t)
-  )
-
 (use-package corfu
   :custom
   (corfu-auto t)

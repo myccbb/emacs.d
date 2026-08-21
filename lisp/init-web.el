@@ -24,13 +24,11 @@
                 "--stdio")
           )
         )
-  (add-hook 'web-mode-hook #'lsp-deferred)
   )
 
 (use-package css-mode
   :mode "\\.css\\'"
   :config
-  (add-hook 'css-mode-hook #'lsp-deferred)
   )
 
 (provide 'init-web)

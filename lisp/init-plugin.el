@@ -56,7 +56,7 @@
   :mode "\\.md\\'"
   :config
   (add-hook 'markdown-mode-hook
-            (lambda () (modify-syntax-entry ?_ "w" markdown-mode-syntax-table)))
+            (lambda () (modify-syntax-entry ?_ "w")))
   )
 
 ;;; adoc-mode
@@ -73,7 +73,7 @@
   (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
   (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
   (add-hook 'lua-mode-hook
-            (lambda () (modify-syntax-entry ?_ "w" lua-mode-syntax-table)))
+            (lambda () (modify-syntax-entry ?_ "w")))
   (setq lua-indent-level 4)
   )
 

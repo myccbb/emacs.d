@@ -5,9 +5,8 @@
 
 (use-package python
   :config
-  (add-hook 'python-mode-hook #'lsp-deferred)
   (add-hook 'python-mode-hook
-            (lambda () (modify-syntax-entry ?_ "w" python-mode-syntax-table)))
+            (lambda () (modify-syntax-entry ?_ "w")))
   )
 
 (use-package yapfify)

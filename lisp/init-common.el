@@ -8,14 +8,12 @@
 ;; Save the cursor posision
 (require 'saveplace)
 (setq-default save-place t)
-(setq server-visit-hook 'save-place-find-file-hook)
 
 ;; Use space instead of tab
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
 ;; Scroll Smoothly
-(setq redisplay-dont-pause t)
 (setq scroll-margin 9)
 (setq scroll-conservatively 1000)
 
@@ -56,11 +54,11 @@
 
 ;; Make '_' a word character
 (add-hook 'prog-mode-hook
-          (lambda () (modify-syntax-entry ?_ "w" prog-mode-syntax-table)))
+          (lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'sh-mode-hook
-          (lambda () (modify-syntax-entry ?_ "w" sh-mode-syntax-table)))
+          (lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'perl-mode-hook
-          (lambda () (modify-syntax-entry ?_ "w" perl-mode-syntax-table)))
+          (lambda () (modify-syntax-entry ?_ "w")))
 
 ;; Autopairing
 (electric-pair-mode t)
@@ -97,10 +95,8 @@
     (progn
       ;; Disable toolbar
       (tool-bar-mode 0)
-      ;; scroll-bar
       (set-scroll-bar-mode 'left)
-      (set-face-foreground 'scroll-bar "#f2f1f0")
-      (set-face-background 'scroll-bar "#4c4c4c")
+      (scroll-bar-mode -1)
       ))
 
 (menu-bar-mode 0)

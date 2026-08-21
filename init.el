@@ -13,23 +13,6 @@
   (package-refresh-contents))
 
 
-;; (require 'org)
-;; (defun my:org-babel-load-file (filename &optional folder)
-;;   "Load org file FILENAME as init file.
-;; If FOLDER provided, then look for file in folder."
-;;   (interactive)
-;;   (let ((fullpath (expand-file-name
-;;                    filename
-;;                    (if folder
-;;                        (expand-file-name folder user-emacs-directory)
-;;                      (expand-file-name user-emacs-directory)))))
-;;     (message fullpath)
-;;     (org-babel-load-file fullpath)))
-
-;; (my:org-babel-load-file "org/init-golang.org")
-;; (my:org-babel-load-file "org/init-vc.org")
-;; (my:org-babel-load-file "org/init-org.org")
-
 ;;; use-package
 (require 'use-package)
 (setq use-package-always-ensure t)
