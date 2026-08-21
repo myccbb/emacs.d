@@ -23,6 +23,11 @@
 (my:resize-frame-font-size (selected-frame))
 (add-hook 'after-make-frame-functions 'my:resize-frame-font-size)
 
+
+(context-menu-mode t)
+(setq enable-recursive-minibuffers t)
+
+
 ;; Display column number
 (column-number-mode t)
 

@@ -41,6 +41,7 @@
 ;; load init-elpa before init-auto-complete
 (require 'init-evil)
 (require 'init-plugin)
+(require 'init-completion)
 (require 'init-lsp)
 ;;(require 'init-ido)
 ;;(require 'init-helm)

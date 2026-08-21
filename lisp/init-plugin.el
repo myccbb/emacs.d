@@ -12,6 +12,15 @@
   )
 
 
+;;; persp-mode
+(use-package persp-mode
+  :ensure t
+  :init
+  (persp-mode 1)
+  :custom
+  (persp-auto-save-opt 1))
+
+
 ;;; Anzu
 (use-package anzu
   :config
