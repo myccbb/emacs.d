@@ -52,7 +52,6 @@
   (corfu-quit-no-match 'separator)
   (corfu-preview-current nil)
   (corfu-count 15)
-  (corfu-max-width 100)
   (corfu-min-width 50)
   (corfu-scroll-margin 3)
   (corfu-bar-width 0.4)
@@ -75,13 +74,11 @@
   :config
   (corfu-terminal-mode +1))
 
-;;; Disable kind-icon to prevent completion candidates from beign clipped.
-;;(use-package kind-icon
-;;  :after corfu
-;;  :custom
-;;  (kind-icon-default-face 'corfu-default)
-;;  :config
-;;  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+(use-package nerd-icons-corfu
+  :ensure t
+  :after corfu
+  :config
+  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 
 (use-package cape
   :init
