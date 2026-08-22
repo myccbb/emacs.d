@@ -51,10 +51,19 @@
   (corfu-quit-at-boundary nil)
   (corfu-quit-no-match 'separator)
   (corfu-preview-current nil)
+  (corfu-count 15)
+  (corfu-max-width 100)
+  (corfu-min-width 50)
+  (corfu-scroll-margin 3)
+  (corfu-bar-width 0.4)
 
   :init
   (global-corfu-mode)
   (corfu-history-mode)
+
+  :config
+  (corfu-popupinfo-mode 1)
+  (setq corfu-popupinfo-delay 0.2)
 
   :bind
   (:map corfu-map
@@ -66,12 +75,13 @@
   :config
   (corfu-terminal-mode +1))
 
-(use-package kind-icon
-  :after corfu
-  :custom
-  (kind-icon-default-face 'corfu-default)
-  :config
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+;;; Disable kind-icon to prevent completion candidates from beign clipped.
+;;(use-package kind-icon
+;;  :after corfu
+;;  :custom
+;;  (kind-icon-default-face 'corfu-default)
+;;  :config
+;;  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (use-package cape
   :init
