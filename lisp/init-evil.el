@@ -2,11 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package undo-fu
+  :ensure t)
 
 (use-package evil
   :init
   ;; change ctrl-z to avoid enter evil-emacs-state
   (setq evil-toggle-key "C-x e v i l")
+  (setq evil-undo-system 'undo-fu)
 
   :config
   (evil-mode t)
