@@ -29,3 +29,4 @@ tutorial
 /.emacs.desktop
 /persp-confs
 /tree-sitter
+/.cache

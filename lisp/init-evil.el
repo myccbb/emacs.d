@@ -60,24 +60,24 @@
   (evil-leader/set-key "j" 'avy-goto-char)
 
   ;; key maps for python mode
-  (evil-leader/set-key-for-mode 'python-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'python-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'python-mode "r" 'lsp-find-references)
+  (evil-leader/set-key-for-mode 'python-ts-mode "d" 'xref-find-definitions)
+  (evil-leader/set-key-for-mode 'python-ts-mode "3d" 'xref-find-definitions-other-window)
+  (evil-leader/set-key-for-mode 'python-ts-mode "r" 'xref-find-references)
 
   ;; key maps for golang mode
-  (evil-leader/set-key-for-mode 'go-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'go-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'go-mode "r" 'lsp-find-references)
+  (evil-leader/set-key-for-mode 'go-ts-mode "d" 'xref-find-definitions)
+  (evil-leader/set-key-for-mode 'go-ts-mode "3d" 'xref-find-definitions-other-window)
+  (evil-leader/set-key-for-mode 'go-ts-mode "r" 'xref-find-references)
 
   ;; key maps for rust mode
-  (evil-leader/set-key-for-mode 'rust-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'rust-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'rust-mode "r" 'lsp-find-references)
+  (evil-leader/set-key-for-mode 'rust-ts-mode "d" 'xref-find-definitions)
+  (evil-leader/set-key-for-mode 'rust-ts-mode "3d" 'xref-find-definitions-other-window)
+  (evil-leader/set-key-for-mode 'rust-ts-mode "r" 'xref-find-references)
 
   ;; key maps for typescript mode
-  (evil-leader/set-key-for-mode 'typescript-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'typescript-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'typescript-mode "r" 'lsp-find-references)
+  (evil-leader/set-key-for-mode 'typescript-ts-mode "d" 'xref-find-definitions)
+  (evil-leader/set-key-for-mode 'typescript-ts-mode "3d" 'xref-find-definitions-other-window)
+  (evil-leader/set-key-for-mode 'typescript-ts-mode "r" 'xref-find-references)
   )
 
 

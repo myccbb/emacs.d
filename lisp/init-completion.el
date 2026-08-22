@@ -2,7 +2,7 @@
   :custom
   (vertico-scroll-margin 0)
   (vertico-count 20)
-  (vertico-resize t)
+  (vertico-resize nil)
   (vertico-cycle t)
   :init
   (vertico-mode)
