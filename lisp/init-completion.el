@@ -17,7 +17,11 @@
   :bind (
          ("C-x b" . consult-buffer)
          ("C-x 4 b" . consult-buffer-other-window)
-         ("C-x 5 b" . consult-buffer-other-frame)))
+         ("C-x 5 b" . consult-buffer-other-frame))
+  :config
+  (setq xref-show-xrefs-function #'consult-xref
+        xref-show-definitions-function #'consult-xref)
+  )
 
 (use-package savehist
   :init
