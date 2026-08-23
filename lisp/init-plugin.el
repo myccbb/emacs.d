@@ -3,9 +3,9 @@
 ;;; Code:
 
 ;;; Theme
-;(use-package color-theme-sanityinc-tomorrow)
-;(require 'color-theme-sanityinc-tomorrow)
-;(load-theme 'sanityinc-tomorrow-night t)
+;;(use-package color-theme-sanityinc-tomorrow)
+;;(require 'color-theme-sanityinc-tomorrow)
+;;(load-theme 'sanityinc-tomorrow-night t)
 (use-package color-theme-sanityinc-tomorrow
   :config
   (load-theme 'sanityinc-tomorrow-night t)
@@ -102,7 +102,7 @@
 (use-package yasnippet
   :config
   (setq yas-snippet-dirs
-      (list (expand-file-name "snippets/snippets" user-emacs-directory))))
+        (list (expand-file-name "snippets/snippets" user-emacs-directory))))
 (yas-global-mode 1)
 
 
@@ -165,15 +165,23 @@
   (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
   )
 
-;;; racket-mode
-; too slow
-;(use-package racket-mode)
-
 
 (use-package apheleia
   :config
   (apheleia-global-mode +1)
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff)))
+
+
+(use-package rime
+  :custom
+  (default-input-method "rime")
+  (rime-share-data-dir "/usr/share/rime-data")
+  (rime-show-candidate 'minibuffer)
+  :config
+  ;; git clone https://github.com/iDvel/rime-ice --depth=1 ~/.emacs.d/rime
+  (setq rime-default-scheme "rime_ice")
+  )
+
 
 
 (provide 'init-plugin)
