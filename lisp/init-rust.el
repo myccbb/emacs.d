@@ -10,13 +10,8 @@
 (use-package rust-mode
   :mode "\\.rs\\'"
   :config
-  ;(add-hook 'rust-mode-hook (lambda () (add-hook 'before-save-hook 'rust-format-buffer nil t)))
+  ;;(add-hook 'rust-mode-hook (lambda () (add-hook 'before-save-hook 'rust-format-buffer nil t)))
   (add-hook 'rust-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
-  )
-(use-package flycheck-rust
-  :config
-  (with-eval-after-load 'rust-mode
-    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
   )
 
 (provide 'init-rust)

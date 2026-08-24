@@ -42,15 +42,6 @@
 (setq uniquify-buffer-name-style 'post-forward)
 
 
-;;; Flycheck - Modern on the fly syntax checking
-;; Quick start : http://www.flycheck.org/manual/latest/Quickstart.html
-;; Install ShellCheck https://github.com/koalaman/shellcheck/releases
-(use-package flycheck
-  :config
-  (global-flycheck-mode)
-  )
-
-
 ;;; Markdown mode
 (use-package markdown-mode
   :mode "\\.md\\'"
