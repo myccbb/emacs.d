@@ -3,7 +3,7 @@
 ;;; Code:
 
 ;; Frame title
-(setq-default frame-title-format '("%f [%m]"))
+(setq-default frame-title-format '("%b [%m]"))
 
 ;; Save the cursor posision
 (require 'saveplace)
