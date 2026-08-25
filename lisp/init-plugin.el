@@ -181,19 +181,26 @@
 (use-package magit)
 
 
-(use-package git-gutter
+(use-package diff-hl
   :delight
+  :init
+  (global-diff-hl-mode)
   :config
-  (global-git-gutter-mode t))
+  (diff-hl-flydiff-mode 1)
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+  (unless (display-graphic-p)
+    (diff-hl-margin-mode 1)))
 
 
 (use-package eldoc
   :ensure nil
   :delight)
 
+
 (use-package hi-lock
   :ensure nil
   :delight)
+
 
 (provide 'init-plugin)
 ;;; init-plugin.el ends here
