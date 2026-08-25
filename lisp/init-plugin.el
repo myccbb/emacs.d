@@ -69,11 +69,13 @@
 ;;; cmake-mode
 (use-package cmake-mode)
 
-;;; rainbow-delimiters
-(use-package rainbow-delimiters
-  :init
-  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-  )
+
+(use-package smartparens
+  :ensure t
+  :hook (prog-mode . smartparens-mode)
+  :config
+  (require 'smartparens-config))
+
 
 ;;; avy-mode
 (use-package avy)
