@@ -52,33 +52,21 @@
   (global-evil-surround-mode t)
   )
 
-(use-package evil-leader
+
+(use-package general
   :config
-  (global-evil-leader-mode)
-
-  ;; key maps for avy
-  (evil-leader/set-key "j" 'avy-goto-char)
-
-  ;; key maps for python mode
-  (evil-leader/set-key-for-mode 'python-ts-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'python-ts-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'python-ts-mode "r" 'xref-find-references)
-
-  ;; key maps for golang mode
-  (evil-leader/set-key-for-mode 'go-ts-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'go-ts-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'go-ts-mode "r" 'xref-find-references)
-
-  ;; key maps for rust mode
-  (evil-leader/set-key-for-mode 'rust-ts-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'rust-ts-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'rust-ts-mode "r" 'xref-find-references)
-
-  ;; key maps for typescript mode
-  (evil-leader/set-key-for-mode 'typescript-ts-mode "d" 'xref-find-definitions)
-  (evil-leader/set-key-for-mode 'typescript-ts-mode "3d" 'xref-find-definitions-other-window)
-  (evil-leader/set-key-for-mode 'typescript-ts-mode "r" 'xref-find-references)
-  )
+  (general-create-definer my-leader-def
+    :states '(normal visual insert motion emacs)
+    :keymaps 'override
+    :prefix "\\"
+    :non-normal-prefix "M-\\")
+  (my-leader-def
+    "j"  'avy-goto-char)
+  (my-leader-def
+    :keymaps 'prog-mode-map
+    "d" 'xref-find-definitions
+    "3d" 'xref-find-definitions-other-window
+    "r" 'xref-find-references))
 
 
 (provide 'init-evil)
