@@ -79,10 +79,9 @@
 (use-package avy)
 
 ;;; window-numbering
-(use-package window-numbering
-  :config
-  (window-numbering-mode t)
-  )
+(use-package winum
+  :init
+  (winum-mode 1))
 
 ;;; lemon-mode
 (use-package lemon-mode)
