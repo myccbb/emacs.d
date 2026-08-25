@@ -14,6 +14,7 @@
 
 ;;; persp-mode
 (use-package persp-mode
+  :delight
   :init
   (persp-mode 1)
   :custom
@@ -22,21 +23,18 @@
 
 ;;; Anzu
 (use-package anzu
+  :delight
   :config
   (global-anzu-mode t)
   )
 
 
 ;;; Highlight Indentation
-(use-package highlight-indentation
-  :init
-  (add-hook 'prog-mode-hook 'highlight-indentation-mode)
-  (add-hook 'yaml-mode-hook 'highlight-indentation-mode)
-  (add-hook 'xml-mode-hook 'highlight-indentation-mode)
-  (add-hook 'nxml-mode-hook 'highlight-indentation-mode)
-  (add-hook 'python-mode-hook 'highlight-indentation-mode)
-  )
-
+(use-package indent-bars
+  :config
+  (require 'indent-bars-ts)
+  :hook
+  ((prog-mode . indent-bars-mode)))
 
 ;;; Uniquify - Making buffer names unique
 (setq uniquify-buffer-name-style 'post-forward)
@@ -91,6 +89,7 @@
 
 ;;; yasnippet
 (use-package yasnippet
+  :delight yas-minor-mode
   :config
   (setq yas-snippet-dirs
         (list (expand-file-name "snippets" user-emacs-directory))))
@@ -150,6 +149,7 @@
 
 ;;; projectile
 (use-package projectile
+  :delight
   :config
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -158,6 +158,7 @@
 
 
 (use-package apheleia
+  :delight
   :config
   (apheleia-global-mode +1)
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff)))
@@ -174,6 +175,25 @@
   )
 
 
+(use-package delight)
+
+
+(use-package magit)
+
+
+(use-package git-gutter
+  :delight
+  :config
+  (global-git-gutter-mode t))
+
+
+(use-package eldoc
+  :ensure nil
+  :delight)
+
+(use-package hi-lock
+  :ensure nil
+  :delight)
 
 (provide 'init-plugin)
 ;;; init-plugin.el ends here
