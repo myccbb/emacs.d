@@ -202,5 +202,12 @@
   :delight)
 
 
+(use-package which-key
+  :ensure nil
+  :delight
+  :init
+  (which-key-mode 1))
+
+
 (provide 'init-plugin)
 ;;; init-plugin.el ends here
