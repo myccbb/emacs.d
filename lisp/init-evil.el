@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package undo-fu
-  :ensure t)
+(use-package undo-fu)
 
 (use-package evil
   :init

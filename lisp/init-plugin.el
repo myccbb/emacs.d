@@ -71,13 +71,12 @@
 
 
 (use-package rainbow-delimiters
-  :ensure t
   :hook ((prog-mode . rainbow-delimiters-mode)
          (text-mode . rainbow-delimiters-mode)))
 
 
 (use-package smartparens
-  :ensure t
+  :delight
   :hook (prog-mode . smartparens-mode)
   :config
   (require 'smartparens-config))
