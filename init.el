@@ -26,16 +26,8 @@
 (require 'init-plugin)
 (require 'init-completion)
 (require 'init-c)
-(require 'init-python)
-(require 'init-javascript)
-(require 'init-coffee)
-(require 'init-terminal)
-(require 'init-rust)
-(require 'init-golang)
-(require 'init-vc)
 (require 'init-org)
 (require 'init-web)
-(require 'init-typescript)
 
 ;; load custom.el if exist
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
