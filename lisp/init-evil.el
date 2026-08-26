@@ -65,7 +65,15 @@
     :keymaps 'prog-mode-map
     "d" 'xref-find-definitions
     "3d" 'xref-find-definitions-other-window
-    "r" 'xref-find-references))
+    "r" 'xref-find-references
+    "sp" 'consult-ripgrep
+    "sc" '(lambda ()
+            (interactive)
+            (consult-ripgrep default-directory))
+    "sd" '(lambda ()
+            (interactive)
+            (let* ((choosed-dir (read-directory-name "Choose Dir: ")))
+              (consult-ripgrep choosed-dir)))))
 
 
 (provide 'init-evil)
