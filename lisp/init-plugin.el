@@ -108,28 +108,8 @@
   (global-set-key (kbd "C-=") 'er/expand-region))
 
 
-;;; clang-format
-(use-package clang-format
-  :config
-  (setq-default clang-format-style "{IndentWidth: 4}"))
-
-
-;;; yaml-mode
-(use-package yaml-mode
-  :mode "\\.yml\\'"
-  :config
-  (add-hook 'yaml-mode-hook
-            (lambda () (modify-syntax-entry ?_ "w"))))
-
-
 ;;; fic-mode
 (use-package fic-mode)
-
-
-;;; dockerfile-mode
-(use-package dockerfile-mode
-  :config
-  (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
 
 (use-package exec-path-from-shell
@@ -141,16 +121,6 @@
         (exec-path-from-shell-copy-env "GOPATH")
         )
     ))
-
-
-;;; nginx-mode
-(use-package nginx-mode)
-
-
-;;; plantuml-mode
-;; (use-package plantuml-mode)
-(require 'plantuml-mode)
-(add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
 
 
 ;;; projectile
@@ -213,6 +183,12 @@
   :delight
   :init
   (which-key-mode 1))
+
+
+;; Emulate A Terminal
+(use-package eat
+  :ensure t
+  :hook (eshell-load-hook . eat-eshell-mode))
 
 
 (provide 'init-plugin)
