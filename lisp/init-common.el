@@ -112,7 +112,7 @@
   (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
-                      (font-spec :family "Noto Sans CJK SC" :size 14))))
+                      (font-spec :family "Noto Sans CJK SC" :size 20))))
 
 ;; fix python error "Invalid coding system 'UTF-8' is specified"
 (define-coding-system-alias 'UTF-8 'utf-8)
