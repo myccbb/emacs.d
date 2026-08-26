@@ -108,8 +108,15 @@
   (global-set-key (kbd "C-=") 'er/expand-region))
 
 
-;;; fic-mode
-(use-package fic-mode)
+;;; hl-todo
+(use-package hl-todo
+  :hook (prog-mode . hl-todo-mode)
+  :config
+  (setq hl-todo-keyword-faces
+        '(("TODO"   . "#FF0000")
+          ("FIXME"  . "#FF0000")
+          ("DEBUG"  . "#A020F0")
+          ("NOTE"   . "#1E90FF"))))
 
 
 (use-package exec-path-from-shell
@@ -187,7 +194,6 @@
 
 ;; Emulate A Terminal
 (use-package eat
-  :ensure t
   :hook (eshell-load-hook . eat-eshell-mode))
 
 

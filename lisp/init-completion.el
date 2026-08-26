@@ -79,7 +79,6 @@
   (corfu-terminal-mode +1))
 
 (use-package nerd-icons-corfu
-  :ensure t
   :after corfu
   :config
   (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
