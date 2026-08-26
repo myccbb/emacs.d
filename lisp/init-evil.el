@@ -67,13 +67,8 @@
     "3d" 'xref-find-definitions-other-window
     "r" 'xref-find-references
     "sp" 'consult-ripgrep
-    "sc" '(lambda ()
-            (interactive)
-            (consult-ripgrep default-directory))
-    "sd" '(lambda ()
-            (interactive)
-            (let* ((choosed-dir (read-directory-name "Choose Dir: ")))
-              (consult-ripgrep choosed-dir)))))
+    "sc" 'my:search-in-current-dir
+    "sd" 'my:choose-dir-and-search))
 
 
 (provide 'init-evil)

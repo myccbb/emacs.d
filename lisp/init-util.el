@@ -104,6 +104,17 @@ If FILENAME not provided, select file from disk."
     )
   )
 
+(defun my:search-in-current-dir ()
+  "Search in current directory"
+  (interactive)
+  (consult-ripgrep default-directory))
+
+(defun my:choose-dir-and-search ()
+  "Choose directory and search"
+  (interactive)
+  (let* ((choosed-dir (read-directory-name "Choose Dir: ")))
+    (consult-ripgrep choosed-dir)))
+
 (defun my:plantuml-export-file-to-svg (&optional filename)
   "Export file to svg, return svg file path.
 If FILENAME not provided, select file from disk."
