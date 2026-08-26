@@ -104,8 +104,15 @@
 ;; use regexp search
 (setq isearch-regexp t)
 
-;; set font to ubuntu mono
-;; (set-frame-font "ubuntu mono")
+;; set default font
+(when (display-graphic-p)
+  ;; apt install fonts-jetbrains-mono
+  (set-face-attribute 'default nil :font "JetBrains Mono-14")
+  ;; apt install fonts-noto-cjk fonts-noto-cjk-extra
+  (dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "Noto Sans CJK SC" :size 14))))
 
 ;; fix python error "Invalid coding system 'UTF-8' is specified"
 (define-coding-system-alias 'UTF-8 'utf-8)
