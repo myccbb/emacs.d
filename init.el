@@ -22,7 +22,7 @@
 (require 'init-common)
 
 ;; load init-elpa before init-auto-complete
-;;(require 'init-evil)
+(require 'init-evil)
 (require 'init-plugin)
 (require 'init-completion)
 (require 'init-c)
