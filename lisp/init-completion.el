@@ -102,6 +102,7 @@
   ;;(add-hook 'before-save-hook #'eglot-format-buffer) ; format on save
   (setq read-process-output-max (* 3 1024 1024)) ; improve performance
   (setq eglot-sync-connect 1) ; change delay to 1 second (default is 0.5)
+  (setq eglot-connect-timeout 3600)
   )
 
 (use-package treesit-auto

@@ -71,5 +71,13 @@
     "sd" 'my:choose-dir-and-search))
 
 
+(use-package evil-multiedit
+  :ensure t
+  :after evil
+  :config
+  (evil-multiedit-default-keybinds)
+  )
+
+
 (provide 'init-evil)
 ;;; init-evil.el ends here

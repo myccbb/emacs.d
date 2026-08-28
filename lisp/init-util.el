@@ -18,24 +18,24 @@
 (defvar-local my:highlight-keyword-prev-str nil
   "Previous highlighted keyword.")
 
-(defun my:highlight-keyword(&rest args)
-  "Highlight search keyword."
-  (interactive)
-  (setq my:highlight-keyword-prev-str my:highlight-keyword-str)
-  (if isearch-regexp
-      (setq my:highlight-keyword-str (car-safe regexp-search-ring))
-    (setq my:highlight-keyword-str (car-safe search-ring)))
-  (when (and (>= (length my:highlight-keyword-str) my:highlight-keyword-len)
-             (not (string-equal my:highlight-keyword-str
-                                my:highlight-keyword-prev-str)))
-    (unhighlight-regexp my:highlight-keyword-prev-str)
-    (highlight-regexp my:highlight-keyword-str 'evil-ex-search)))
+;;(defun my:highlight-keyword(&rest args)
+;;  "Highlight search keyword."
+;;  (interactive)
+;;  (setq my:highlight-keyword-prev-str my:highlight-keyword-str)
+;;  (if isearch-regexp
+;;      (setq my:highlight-keyword-str (car-safe regexp-search-ring))
+;;    (setq my:highlight-keyword-str (car-safe search-ring)))
+;;  (when (and (>= (length my:highlight-keyword-str) my:highlight-keyword-len)
+;;             (not (string-equal my:highlight-keyword-str
+;;                                my:highlight-keyword-prev-str)))
+;;    (unhighlight-regexp my:highlight-keyword-prev-str)
+;;    (highlight-regexp my:highlight-keyword-str 'evil-ex-search)))
 
 (advice-add 'isearch-exit :after 'my:highlight-keyword)
-(advice-add 'evil-search :after 'my:highlight-keyword)
-(advice-add 'evil-search-next :after 'my:highlight-keyword)
-(advice-add 'evil-search-previous :after 'my:highlight-keyword)
-(advice-add 'evil-search-incrementally :after 'my:highlight-keyword)
+;;(advice-add 'evil-search :after 'my:highlight-keyword)
+;;(advice-add 'evil-search-next :after 'my:highlight-keyword)
+;;(advice-add 'evil-search-previous :after 'my:highlight-keyword)
+;;(advice-add 'evil-search-incrementally :after 'my:highlight-keyword)
 
 (defun my:resize-frame-font-size (frame &optional size)
   "Resize FRAME by SIZE.

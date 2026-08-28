@@ -197,5 +197,12 @@
   :hook (eshell-load-hook . eat-eshell-mode))
 
 
+;; Meow
+(use-package meow
+  :delight
+  :config
+  (meow-setup)
+  (meow-global-mode 1))
+
 (provide 'init-plugin)
 ;;; init-plugin.el ends here
