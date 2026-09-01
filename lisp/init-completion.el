@@ -104,6 +104,7 @@
   (setq eglot-sync-connect 1) ; change delay to 1 second (default is 0.5)
   (setq eglot-connect-timeout 3600)
   (setq eglot-request-timeout 3600)
+  (setq jsonrpc-default-request-timeout 3600)
   (setq eglot-autoreconnect t)
   )
 
