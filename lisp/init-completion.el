@@ -6,6 +6,10 @@
   (vertico-cycle t)
   :init
   (vertico-mode)
+  :config
+  (setq read-file-name-completion-ignore-case t)
+  (setq-default vertico-resize nil)
+  (setq vertico-resize nil)
   )
 
 (use-package orderless
@@ -39,11 +43,11 @@
   :init
   (marginalia-mode 1))
 
-(use-package nerd-icons-completion
-  :after marginalia
-  :config
-  (nerd-icons-completion-mode)
-  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+;;(use-package nerd-icons-completion
+;;  :after marginalia
+;;  :config
+;;  (nerd-icons-completion-mode)
+;;  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
 
 (use-package corfu
   :custom

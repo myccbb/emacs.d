@@ -136,4 +136,8 @@
                 )))
   )
 
+;;(with-eval-after-load 'project
+;;  (add-to-list 'completion-ignored-extensions "node_modules/")
+;;  )
+
 (provide 'init-common)
